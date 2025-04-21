@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uber Weekly Rides Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>UBER WEEKLY RIDES PREDICTION</h1>
+    <form method="post" action="/predict">
+        <input type="text" name="Priceperweek" placeholder="Priceperweek" required>
+        <input type="text" name="Population" placeholder="Population" required>
+        <input type="text" name="monthlyincome" placeholder="Monthlyincome" required>
+        <input type="text" name="Averageparkingpermonth" placeholder="Averageparkingpermonth" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
